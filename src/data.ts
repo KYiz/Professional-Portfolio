@@ -207,6 +207,87 @@ export const projects: Project[] = [
     ],
     reflection: { en: 'Repeated experiments revealed where extra structure did and did not help. This supports more focused next experiments on corpus scale and alternative cue injection, rather than choosing a model from a single run.', zh: '重复实验揭示了额外结构信号的实际作用，帮助下一轮研究聚焦语料规模与提示注入方式，也形成了基于多次比较进行模型判断的工作方法。' },
   },
+  {
+    slug: 'vibe-kangbo', index: '06',
+    category: { en: 'Creative coding · Video', zh: '创意编程 · 视频' },
+    title: { en: 'Vibe Coding Knowledge Showcase · Kondratiev Wave', zh: 'Vibe Coding知识大赏-康波' },
+    subtitle: { en: 'A short-form episode with an editable video project.', zh: '从内容结构到可编辑视频工程的短片制作。' },
+    period: { en: 'Oct 2026', zh: '2026.10' },
+    role: { en: 'Video content and production', zh: '视频内容与制作' },
+    tags: ['HyperFrames', 'HTML', 'Video', '9:16'],
+    repo: 'https://github.com/KYiz/vibe-kangbo-K-wave',
+    status: { en: 'Episode 1 complete', zh: '第一集成片' },
+    overview: { en: 'Created an episode about the Kondratiev wave, graduate hiring and individual choices. The repository holds the content structure, source materials, review notes and an editable HyperFrames video project.', zh: '围绕康波周期、毕业招聘与个人选择制作视频第一集。仓库保存内容结构、素材整理、核验记录及可编辑的 HyperFrames 视频工程。' },
+    challenge: { en: 'Condense an economic concept and its personal relevance into a short vertical video without losing the limits of the claims.', zh: '在短竖屏视频中讲清经济概念与个人选择的关系，同时保留事实边界。' },
+    responsibility: [
+      { en: 'Organised the episode structure and assembled the editable visual timeline.', zh: '整理单集内容结构并制作可编辑的视觉时间轴。' },
+      { en: 'Prepared the final render and kept review and asset records with the project.', zh: '完成成片导出，并在工程中保存审核与素材记录。' },
+    ],
+    architecture: [
+      { en: 'Content outline → HyperFrames HTML timeline → audio mix → 9:16 render.', zh: '内容提纲 → HyperFrames HTML 时间轴 → 音频混音 → 9:16 竖屏成片。' },
+    ],
+    process: [
+      { en: 'Iterated on the visuals and information density, then checked the project and rendered output.', zh: '迭代画面与信息密度，检查工程和最终成片。' },
+    ],
+    outcomes: [
+      { en: 'Completed a 2-minute-14-second, 1080 × 1920 vertical episode with an editable source project.', zh: '完成 2 分 14 秒、1080 × 1920 的竖屏成片及可编辑源工程。' },
+    ],
+    reflection: { en: 'A compact explainer works best when every visual supports a specific point and the source material remains traceable.', zh: '短视频的信息表达需要让每个画面服务于具体观点，并保留可追溯的素材依据。' },
+  },
+  {
+    slug: 'massage-mayhem', index: '07',
+    category: { en: 'Game prototype', zh: '游戏原型' },
+    title: { en: 'Massage Mayhem', zh: '按摩大混乱' },
+    subtitle: { en: 'A playable massage-shop rules and interaction prototype.', zh: '可玩的按摩店规则与交互原型。' },
+    period: { en: 'Oct 2026', zh: '2026.10' },
+    role: { en: 'Game rules and interaction prototype', zh: '游戏规则与交互原型' },
+    tags: ['JavaScript', 'HTML', 'Game rules', 'localStorage'],
+    repo: 'https://github.com/KYiz/massage-mayhem',
+    status: { en: 'Playable prototype', zh: '可玩原型' },
+    overview: { en: 'A browser game prototype built around taking orders, choosing therapists, gesture actions and customer ratings. The repository also contains planning documents and visual concepts.', zh: '围绕接单、选择技师、手势操作与顾客评价制作浏览器游戏原型；仓库还包含策划文档与美术概念。' },
+    challenge: { en: 'Make the core loop playable and testable before formal art, animation and commercial systems are added.', zh: '先把核心玩法做成可体验、可测试的规则闭环，再考虑正式美术与商业化系统。' },
+    responsibility: [
+      { en: 'Implemented deterministic game rules for customers, service outcomes, skills, rewards and progression.', zh: '实现顾客、服务结果、技能、奖励与关卡进程的规则逻辑。' },
+      { en: 'Connected gesture quality and local saves to the browser interface.', zh: '将手势操作评分与本地存档接入浏览器界面。' },
+    ],
+    architecture: [
+      { en: 'Pure JavaScript rules → browser interaction layer → localStorage save; 30 levels are defined in JSON.', zh: '纯 JavaScript 规则 → 浏览器交互层 → localStorage 存档；30 关数据由 JSON 定义。' },
+    ],
+    process: [
+      { en: 'Kept rules independent of the DOM and added automated checks for progression and edge cases.', zh: '让规则逻辑独立于 DOM，并用自动检查覆盖关卡进程与边界情况。' },
+    ],
+    outcomes: [
+      { en: 'Delivered a playable rules prototype with a 30-level progression; final art, audio and commercial integrations remain outside this prototype.', zh: '完成含 30 关进程的可玩规则原型；正式美术、音效和商业化接入尚不在该原型内。' },
+    ],
+    reflection: { en: 'Separating rules from presentation makes it easier to test balance and change the visual layer later.', zh: '规则与表现层分离，便于先验证数值和玩法，再迭代视觉表现。' },
+  },
+  {
+    slug: 'menu-weixin', index: '08',
+    category: { en: 'WeChat mini program', zh: '微信小程序' },
+    title: { en: 'Xiaxia Food Time', zh: '小夏饱饱时光' },
+    subtitle: { en: 'A menu and order workflow for a WeChat mini program.', zh: '从菜单浏览到订单同步的微信小程序。' },
+    period: { en: 'Oct 2026', zh: '2026.10' },
+    role: { en: 'Mini program development', zh: '小程序开发' },
+    tags: ['WeChat Mini Program', 'JavaScript', 'Cloud Functions', 'Cloud Database'],
+    repo: 'https://github.com/KYiz/Menu-Weixin-DevTools',
+    status: { en: 'Source and local checks complete', zh: '源码与本地检查完成' },
+    overview: { en: 'Built a WeChat mini program for browsing dishes, saving favorites, placing orders and tracking their status. Orders are saved locally first and synchronized to a cloud database through a cloud function.', zh: '开发微信点餐小程序，支持菜品浏览、收藏、下单和订单状态查看。订单先保存在本机，再通过云函数同步到云数据库。' },
+    challenge: { en: 'Keep order state consistent across local storage and the cloud while restricting chef actions to a verified WeChat identity.', zh: '在本机与云端之间保持订单状态一致，并确保主厨操作只对经微信身份验证的账号开放。' },
+    responsibility: [
+      { en: 'Built menu, recipe, cart, favorites and order pages with local persistence.', zh: '实现菜单、菜谱、购物车、收藏和订单页面及本机持久化。' },
+      { en: 'Used a cloud function to verify OpenID, synchronize orders and validate status transitions.', zh: '通过云函数核验 OpenID、同步订单并校验状态流转。' },
+    ],
+    architecture: [
+      { en: 'WeChat pages and local storage → cloud function → cloud database orders collection.', zh: '微信小程序页面与本机存储 → 云函数 → 云数据库订单集合。' },
+    ],
+    process: [
+      { en: 'Added checks for duplicate submissions, identity boundaries, order recovery and package size.', zh: '加入重复提交、身份边界、订单恢复与代码包体积检查。' },
+    ],
+    outcomes: [
+      { en: 'Implemented the source and local checks; the repository notes that WeChat DevTools compilation and device testing were still pending.', zh: '完成源码与本地检查；仓库说明微信开发者工具编译和真机验证仍待完成。' },
+    ],
+    reflection: { en: 'Order flows need clear identity checks and recovery when synchronization fails.', zh: '订单流程需要明确的身份校验，也要在同步失败时给用户可恢复的路径。' },
+  },
 ]
 
 const projectExperience = [
@@ -267,6 +348,9 @@ export const projectVisuals: Record<string, string> = {
   'uav-advisory-agent': './visuals/agent.webp',
   'meet-ta': './visuals/role.webp',
   'discourse-research': './visuals/algorithm.webp',
+  'vibe-kangbo': './visuals/product.webp',
+  'massage-mayhem': './visuals/role.webp',
+  'menu-weixin': './visuals/development.webp',
 }
 
 export const portfolioDocument = {

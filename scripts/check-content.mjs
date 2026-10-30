@@ -12,12 +12,12 @@ const data = await import(`data:text/javascript;base64,${Buffer.from(code).toStr
 const { projects, experience, categories, strengths, workingStyle, profile, portfolioDocument, projectVisuals } = data
 const slugs = new Set(projects.map(project => project.slug))
 assert.equal(slugs.size, projects.length, 'Project slugs must be unique')
-assert.equal(projects.length, 5, 'The portfolio must contain five core projects')
+assert.equal(projects.length, 8, 'The portfolio must contain five core cases and three other projects')
 assert.equal(experience.length, 6, 'Experience must include five cases and volunteer service')
 assert.ok(slugs.has('caretrip-ops') && !slugs.has('caretrip-goai'), 'Only the ZEIL CareTrip case study should be listed')
 const projectExperience = experience.filter(item => item.kind === 'project')
-assert.equal(projectExperience.length, projects.length)
-assert.equal(new Set(projectExperience.map(item => item.projectSlug)).size, projects.length)
+assert.equal(projectExperience.length, 5)
+assert.equal(new Set(projectExperience.map(item => item.projectSlug)).size, projectExperience.length)
 
 function checkLocalization(value) {
   if (!value || typeof value !== 'object') return

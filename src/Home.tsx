@@ -4,11 +4,8 @@ const internshipSlugs = ['allied-medical-rag', 'uav-advisory-agent']
 const internships = internshipSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSlugs = ['caretrip-ops', 'meet-ta', 'discourse-research']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const otherProjects = [
-  { name: 'vibe-kangbo-zhouqi', repo: 'https://github.com/KYiz/vibe-kangbo-zhouqi' },
-  { name: 'massage-mayhem', repo: 'https://github.com/KYiz/massage-mayhem' },
-  { name: 'Menu-Weixin-DevTools', repo: 'https://github.com/KYiz/Menu-Weixin-DevTools' },
-]
+const otherSlugs = ['vibe-kangbo', 'massage-mayhem', 'menu-weixin']
+const otherProjects = otherSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
     en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
@@ -29,6 +26,18 @@ const featuredSummaries: Record<string, Localized> = {
   'discourse-research': {
     en: 'Processed TED-MDB data and compared structural cues across 40 MiniLM runs; the repository records the five-seed results.',
     zh: '处理 TED-MDB 数据，并通过 40 次 MiniLM 实验比较结构提示；仓库记录了五随机种子的结果。',
+  },
+  'vibe-kangbo': {
+    en: 'Produced a 2-minute-14-second vertical episode about the Kondratiev wave, with an editable HyperFrames project.',
+    zh: '制作关于康波周期的 2 分 14 秒竖屏视频，并保留可编辑的 HyperFrames 工程。',
+  },
+  'massage-mayhem': {
+    en: 'Built a playable browser prototype with gesture actions, game rules, local saves, and 30 levels.',
+    zh: '制作可玩的浏览器原型，包含手势操作、规则系统、本地存档和 30 关进程。',
+  },
+  'menu-weixin': {
+    en: 'Developed a WeChat menu and ordering mini program with local storage and cloud-function order sync.',
+    zh: '开发微信点餐小程序，包含本机订单保存和云函数同步。',
   },
 }
 
@@ -79,7 +88,7 @@ export default function Home({ lang }: { lang: Language }) {
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         <div className="other-work">
           <h3>{lang === 'zh' ? '其他项目' : 'Other projects'}</h3>
-          <ul>{otherProjects.map(project => <li key={project.name}><a href={project.repo} target="_blank" rel="noreferrer">{project.name} ↗</a></li>)}</ul>
+          <div className="project-list">{otherProjects.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         </div>
       </section>
 
