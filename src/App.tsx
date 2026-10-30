@@ -8,7 +8,7 @@ function initialLanguage(): Language {
     const saved = localStorage.getItem('portfolio-language')
     if (saved === 'en' || saved === 'zh') return saved
   } catch { /* The language switch still works without storage. */ }
-  return navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+  return 'zh'
 }
 
 const sectionForPath: Record<string, string> = {
@@ -38,7 +38,7 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en'
     try { localStorage.setItem('portfolio-language', lang) } catch { /* Optional preference. */ }
-    document.title = project ? `${t(project.title, lang)} | Yixiang Zou` : 'Yixiang Zou | Portfolio'
+    document.title = project ? `${t(project.title, lang)} | ${lang === 'zh' ? '邹逸翔' : 'Yixiang Zou'}` : lang === 'zh' ? '邹逸翔 | 个人主页' : 'Yixiang Zou | Portfolio'
     const description = project ? t(project.overview, lang) : lang === 'zh'
       ? '邹逸翔的个人主页：AI 应用开发、Agent 工作流与视觉模型项目。'
       : 'Yixiang Zou’s portfolio: applied AI, agent workflows, and computer vision projects.'
