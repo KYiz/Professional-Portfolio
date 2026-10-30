@@ -3,7 +3,7 @@ import { t, type Language, type Localized, type Project } from './data'
 type DetailSection = { key: string; title: Localized; content: Localized | Localized[] }
 
 export default function ProjectDetail({ project, lang }: { project: Project; lang: Language }) {
-  const isInternship = project.slug === 'allied-medical-rag'
+  const isInternship = ['allied-medical-rag', 'uav-advisory-agent'].includes(project.slug)
   const backHref = isInternship ? '#/experience' : '#/projects'
   const backLabel = lang === 'zh' ? (isInternship ? '返回实习经历' : '返回项目列表') : (isInternship ? 'Back to internship' : 'Back to projects')
   const sections: DetailSection[] = [

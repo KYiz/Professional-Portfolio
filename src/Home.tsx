@@ -1,9 +1,10 @@
 import { education, profile, projects, t, type Language, type Localized, type Project } from './data'
 
-const internship = projects.find(project => project.slug === 'allied-medical-rag')!
-const featuredSlugs = ['caretrip-ops', 'meet-ta', 'uav-advisory-agent']
+const internshipSlugs = ['allied-medical-rag', 'uav-advisory-agent']
+const internships = internshipSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
+const featuredSlugs = ['caretrip-ops', 'meet-ta']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const other = projects.filter(project => project.slug !== internship.slug && !featuredSlugs.includes(project.slug))
+const other = projects.filter(project => !internshipSlugs.includes(project.slug) && !featuredSlugs.includes(project.slug))
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
     en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
@@ -30,7 +31,7 @@ function ProjectEntry({ project, lang }: { project: Project; lang: Language }) {
       <h3><a href={`#/projects/${project.slug}`}>{t(project.title, lang)}</a></h3>
       <p>{t(featuredSummaries[project.slug], lang)}</p>
       <div className="entry-links">
-        <a href={`#/projects/${project.slug}`}>{lang === 'zh' ? (project.slug === internship.slug ? '实习工作说明' : '项目说明') : 'Case study'} →</a>
+        <a href={`#/projects/${project.slug}`}>{lang === 'zh' ? (internshipSlugs.includes(project.slug) ? '实习工作说明' : '项目说明') : 'Case study'} →</a>
         {project.repo && <a href={project.repo} target="_blank" rel="noreferrer">GitHub ↗</a>}
       </div>
     </article>
@@ -59,14 +60,14 @@ export default function Home({ lang }: { lang: Language }) {
 
       <section className="content-section" id="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">{lang === 'zh' ? '实习经历' : 'Internship experience'}</h2>
-        <div className="project-list"><ProjectEntry project={internship} lang={lang} /></div>
+        <div className="project-list">{internships.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
       </section>
 
       <section className="content-section" id="projects" aria-labelledby="projects-title">
         <h2 id="projects-title">{lang === 'zh' ? '项目经历' : 'Selected projects'}</h2>
         <p className="section-intro">{lang === 'zh'
-          ? '下面三个项目分别对应旅行 Agent、多模态对话与法规咨询。点开项目说明可查看问题、个人贡献、方法和结果。'
-          : 'Three projects covering a travel Agent, multimodal conversation, and regulatory advisory. Each case study explains the problem, my contribution, approach, and result.'}</p>
+          ? '下面的项目涉及旅行 Agent、多模态对话和 NLP 研究。点开项目说明可查看问题、个人贡献、方法和结果。'
+          : 'Projects in travel agents, multimodal conversation, and NLP research. Each case study explains the problem, my contribution, approach, and result.'}</p>
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         <div className="other-work">
           <h3>{lang === 'zh' ? '其他项目' : 'Other work'}</h3>
