@@ -3,6 +3,9 @@ import { t, type Language, type Localized, type Project } from './data'
 type DetailSection = { key: string; title: Localized; content: Localized | Localized[] }
 
 export default function ProjectDetail({ project, lang }: { project: Project; lang: Language }) {
+  const isInternship = project.slug === 'allied-medical-rag'
+  const backHref = isInternship ? '#/experience' : '#/projects'
+  const backLabel = lang === 'zh' ? (isInternship ? '返回实习经历' : '返回项目列表') : (isInternship ? 'Back to internship' : 'Back to projects')
   const sections: DetailSection[] = [
     { key: 'problem', title: { en: 'The problem', zh: '问题' }, content: project.challenge },
     { key: 'contribution', title: { en: 'My contribution', zh: '我的工作' }, content: project.responsibility },
@@ -14,9 +17,9 @@ export default function ProjectDetail({ project, lang }: { project: Project; lan
 
   return (
     <main className="page-width detail-page">
-      <a className="back-link" href="#/projects">← {lang === 'zh' ? '返回项目列表' : 'Back to projects'}</a>
+      <a className="back-link" href={backHref}>← {backLabel}</a>
       <div className="detail-heading">
-        <p className="eyebrow">{lang === 'zh' ? '项目说明' : 'Case study'} · {project.index}</p>
+        <p className="eyebrow">{lang === 'zh' ? (isInternship ? '实习工作' : '项目说明') : (isInternship ? 'Internship work' : 'Case study')} · {project.index}</p>
         <h1>{t(project.title, lang)}</h1>
         <p className="detail-overview">{t(project.overview, lang)}</p>
         {project.repo && <a href={project.repo} target="_blank" rel="noreferrer">{lang === 'zh' ? '查看项目仓库' : 'View repository'} ↗</a>}
@@ -38,7 +41,7 @@ export default function ProjectDetail({ project, lang }: { project: Project; lan
         </section>)}
         {project.note && <p className="project-note">{t(project.note, lang)}</p>}
       </div>
-      <a className="back-link bottom-link" href="#/projects">← {lang === 'zh' ? '返回项目列表' : 'Back to projects'}</a>
+      <a className="back-link bottom-link" href={backHref}>← {backLabel}</a>
     </main>
   )
 }

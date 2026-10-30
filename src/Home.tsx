@@ -1,8 +1,9 @@
 import { education, profile, projects, t, type Language, type Localized, type Project } from './data'
 
-const featuredSlugs = ['allied-medical-rag', 'caretrip-ops', 'meet-ta']
+const internship = projects.find(project => project.slug === 'allied-medical-rag')!
+const featuredSlugs = ['caretrip-ops', 'meet-ta', 'uav-advisory-agent']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const other = projects.filter(project => !featuredSlugs.includes(project.slug))
+const other = projects.filter(project => project.slug !== internship.slug && !featuredSlugs.includes(project.slug))
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
     en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
@@ -16,6 +17,10 @@ const featuredSummaries: Record<string, Localized> = {
     en: 'Developed the visual emotion model and connected it to a team-built multimodal conversation prototype; test accuracy reached 85.34%.',
     zh: '负责视觉情绪模型开发，并接入团队的多模态对话原型；模型测试准确率为 85.34%。',
   },
+  'uav-advisory-agent': {
+    en: 'Built a five-stage RAG advisory Agent for UAV export controls; regulatory judgment accuracy reached 88.24%.',
+    zh: '开发无人机出口管制五阶段 RAG 咨询 Agent；法规判断准确率为 88.24%。',
+  },
 }
 
 function ProjectEntry({ project, lang }: { project: Project; lang: Language }) {
@@ -25,7 +30,7 @@ function ProjectEntry({ project, lang }: { project: Project; lang: Language }) {
       <h3><a href={`#/projects/${project.slug}`}>{t(project.title, lang)}</a></h3>
       <p>{t(featuredSummaries[project.slug], lang)}</p>
       <div className="entry-links">
-        <a href={`#/projects/${project.slug}`}>{lang === 'zh' ? '项目说明' : 'Case study'} →</a>
+        <a href={`#/projects/${project.slug}`}>{lang === 'zh' ? (project.slug === internship.slug ? '实习工作说明' : '项目说明') : 'Case study'} →</a>
         {project.repo && <a href={project.repo} target="_blank" rel="noreferrer">GitHub ↗</a>}
       </div>
     </article>
@@ -40,8 +45,8 @@ export default function Home({ lang }: { lang: Language }) {
           <p className="eyebrow">{lang === 'zh' ? '个人主页' : 'Personal website'}</p>
           <h1 id="home-title">{lang === 'zh' ? '邹逸翔' : 'Yixiang Zou'}<span>{lang === 'zh' ? 'Yixiang Zou' : '邹逸翔'}</span></h1>
           <p className="intro-lead">{lang === 'zh'
-            ? '我在奥克兰大学学习人工智能，主要做 AI 应用开发。近期项目涉及企业知识检索、Agent 工作流和视觉模型。这里记录我具体做过的工作和结果。'
-            : 'I studied artificial intelligence at the University of Auckland and work on applied AI. My recent projects involve enterprise search, agent workflows, and computer vision. This site records what I built and learned.'}</p>
+            ? '我在奥克兰大学学习人工智能，主要做 AI 应用开发。下面分别记录我的实习工作与项目，包括企业知识检索、Agent 工作流和视觉模型。'
+            : 'I studied artificial intelligence at the University of Auckland and work on applied AI. Below are my internship work and projects in enterprise search, agent workflows, and computer vision.'}</p>
           <div className="intro-links">
             <a href={profile.resume} target="_blank" rel="noreferrer">{lang === 'zh' ? '简历 PDF' : 'CV (Chinese PDF)'} ↗</a>
             <a href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -52,11 +57,16 @@ export default function Home({ lang }: { lang: Language }) {
         <img className="profile-photo" src="./profile.jpg" alt={lang === 'zh' ? '邹逸翔的照片' : 'Portrait of Yixiang Zou'} width="180" height="220" />
       </section>
 
+      <section className="content-section" id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">{lang === 'zh' ? '实习经历' : 'Internship experience'}</h2>
+        <div className="project-list"><ProjectEntry project={internship} lang={lang} /></div>
+      </section>
+
       <section className="content-section" id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">{lang === 'zh' ? '项目' : 'Selected projects'}</h2>
+        <h2 id="projects-title">{lang === 'zh' ? '项目经历' : 'Selected projects'}</h2>
         <p className="section-intro">{lang === 'zh'
-          ? '下面三个项目分别对应企业应用、Agent 开发和视觉模型。点开项目说明可查看问题、个人贡献、方法和结果。'
-          : 'Three projects covering an enterprise application, agent development, and a vision model. Each case study explains the problem, my contribution, approach, and result.'}</p>
+          ? '下面三个项目分别对应旅行 Agent、多模态对话与法规咨询。点开项目说明可查看问题、个人贡献、方法和结果。'
+          : 'Three projects covering a travel Agent, multimodal conversation, and regulatory advisory. Each case study explains the problem, my contribution, approach, and result.'}</p>
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         <div className="other-work">
           <h3>{lang === 'zh' ? '其他项目' : 'Other work'}</h3>

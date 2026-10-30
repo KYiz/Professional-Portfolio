@@ -116,13 +116,13 @@ export const projects: Project[] = [
   },
   {
     slug: 'uav-advisory-agent', index: '03',
-    category: { en: 'LLM application · Internship', zh: '大模型应用 · 实习' },
+    category: { en: 'LLM application · Agent project', zh: '大模型应用 · Agent 项目' },
     title: { en: 'UAV Export Advisory Agent', zh: '无人机出口管制咨询 Agent' },
     subtitle: { en: 'Turn regulatory documents into a structured, five stage advisory workflow.', zh: '将复杂法规材料转为结构化五阶段咨询流程。' },
     period: { en: 'Jan – Jun 2025', zh: '2025.01 – 06' },
-    role: { en: 'LLM application and agent design · New Zealand Customs', zh: '大模型应用与智能体设计 · 新西兰海关' },
+    role: { en: 'AI Agent development · New Zealand Customs', zh: 'AI Agent 开发 · 新西兰海关' },
     tags: ['IBM watsonx', 'RAG', 'LangGraph', 'ReAct', 'NZSGL', 'Prompt Lab'],
-    status: { en: 'Internship project · advisory agent PoC', zh: '实习项目 · 咨询 Agent PoC' },
+    status: { en: 'Advisory Agent PoC', zh: '咨询 Agent PoC' },
     overview: { en: 'For a New Zealand Customs advisory scenario, I developed a UAV export-controls Agent in IBM watsonx. The work connected regulatory knowledge, LangGraph / ReAct reasoning, five-stage decisions, and human review into a structured consultation workflow.', zh: '面向新西兰海关无人机出口管制咨询场景，在 IBM watsonx 环境中开发 Agent，将法规知识库、LangGraph / ReAct 推理、五阶段判断与人工复核连接成结构化咨询工作流。' },
     challenge: { en: 'Threshold values, incomplete descriptions, and dual use scenarios require more than a plausible answer. The agent needed to explain its grounds consistently across classification, controls, exemptions, and final advice.', zh: '阈值判断、不完整描述与军民两用场景需要清晰的推理过程。Agent 必须在清单分类、管制、豁免与最终建议之间保持依据和结论的一致性。' },
     responsibility: [

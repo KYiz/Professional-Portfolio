@@ -15,7 +15,7 @@ const sectionForPath: Record<string, string> = {
   '/': 'top',
   '/about': 'about',
   '/projects': 'projects',
-  '/experience': 'background',
+  '/experience': 'experience',
   '/portfolio': 'portfolio',
   '/contact': 'contact',
 }
@@ -71,6 +71,7 @@ export default function App() {
           <a className="brand" href="#/">{lang === 'zh' ? '邹逸翔' : 'Yixiang Zou'}</a>
           <nav className="nav" aria-label={lang === 'zh' ? '主导航' : 'Main navigation'}>
             <a href="#/about" aria-current={path === '/about' ? 'page' : undefined}>{lang === 'zh' ? '关于' : 'About'}</a>
+            <a href="#/experience" aria-current={path === '/experience' ? 'page' : undefined}>{lang === 'zh' ? '实习' : 'Internship'}</a>
             <a href="#/projects" aria-current={path.startsWith('/projects') ? 'page' : undefined}>{lang === 'zh' ? '项目' : 'Projects'}</a>
             <a href={profile.resume} target="_blank" rel="noreferrer">{lang === 'zh' ? '简历' : 'CV'} ↗</a>
             <button type="button" onClick={toggleLanguage} aria-label={lang === 'zh' ? 'Switch to English' : '切换为中文'}>

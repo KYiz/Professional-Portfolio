@@ -17,7 +17,7 @@ Run `npm run build` to check TypeScript, content links, and the production bundl
 
 ## Update the site
 
-- `src/Home.tsx`: introduction, three featured projects, other work, education, and links.
+- `src/Home.tsx`: introduction, separate internship and project sections, education, and links.
 - `src/ProjectDetail.tsx`: case-study layout.
 - `src/data.ts`: bilingual profile and project content. Add a verified public `repo` URL to a project to show its GitHub link on the homepage and case study. Leave it unset for private or unpublished work.
 - `src/minimal.css`: current responsive design.
