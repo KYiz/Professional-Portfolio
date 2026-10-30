@@ -4,6 +4,11 @@ const internshipSlugs = ['allied-medical-rag', 'uav-advisory-agent']
 const internships = internshipSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSlugs = ['caretrip-ops', 'meet-ta', 'discourse-research']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
+const otherProjects = [
+  { name: 'vibe-kangbo-zhouqi', repo: 'https://github.com/KYiz/vibe-kangbo-zhouqi' },
+  { name: 'massage-mayhem', repo: 'https://github.com/KYiz/massage-mayhem' },
+  { name: 'Menu-Weixin-DevTools', repo: 'https://github.com/KYiz/Menu-Weixin-DevTools' },
+]
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
     en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
@@ -72,6 +77,10 @@ export default function Home({ lang }: { lang: Language }) {
           ? '下面的项目涉及旅行 Agent、多模态对话和 NLP 研究。点开项目说明可查看问题、个人贡献、方法和结果。'
           : 'Projects in travel agents, multimodal conversation, and NLP research. Each case study explains the problem, my contribution, approach, and result.'}</p>
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
+        <div className="other-work">
+          <h3>{lang === 'zh' ? '其他项目' : 'Other projects'}</h3>
+          <ul>{otherProjects.map(project => <li key={project.name}><a href={project.repo} target="_blank" rel="noreferrer">{project.name} ↗</a></li>)}</ul>
+        </div>
       </section>
 
       <section className="content-section compact-section" id="background" aria-labelledby="background-title">
