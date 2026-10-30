@@ -5,12 +5,12 @@ const featured = featuredSlugs.map(slug => projects.find(project => project.slug
 const other = projects.filter(project => !featuredSlugs.includes(project.slug))
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
-    en: 'Extended a Spring Boot prototype with source refresh, multimodal retrieval, and suggestions inside the service team’s Front workflow.',
-    zh: '在已有 Spring Boot 原型上完成资料刷新、多模态检索，并将零件建议接入客服使用的 Front 工作流。',
+    en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
+    zh: '用 Spring Boot 串联 Front 邮件、Azure OpenAI、混合检索、OneDrive 知识刷新与员工审核界面。',
   },
   'caretrip-ops': {
-    en: 'Built a travel agent workflow PoC with LangGraph, quote verification, approval checkpoints, and simulated orders; all 76 tests passed.',
-    zh: '开发旅行 Agent 工作流 PoC，覆盖报价核验、用户确认与模拟下单；76 项前后端测试通过。',
+    en: 'Built a LangGraph travel workflow with evidence checks and traveler approval; the public repository now extends the Hackathon PoC to V5.',
+    zh: '开发含证据核验和本人审批的 LangGraph 旅行工作流；公开仓库现已从 Hackathon PoC 扩展至 V5。',
   },
   'meet-ta': {
     en: 'Developed the visual emotion model and connected it to a team-built multimodal conversation prototype; test accuracy reached 85.34%.',
@@ -60,7 +60,7 @@ export default function Home({ lang }: { lang: Language }) {
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         <div className="other-work">
           <h3>{lang === 'zh' ? '其他项目' : 'Other work'}</h3>
-          <ul>{other.map(project => <li key={project.slug}><a href={`#/projects/${project.slug}`}>{t(project.title, lang)}</a><span>{t(project.status, lang)}</span></li>)}</ul>
+          <ul>{other.map(project => <li key={project.slug}><a href={`#/projects/${project.slug}`}>{t(project.title, lang)}</a><span>{t(project.status, lang)}{project.repo && <> · <a href={project.repo} target="_blank" rel="noreferrer">GitHub ↗</a></>}</span></li>)}</ul>
         </div>
       </section>
 
