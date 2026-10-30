@@ -26,6 +26,10 @@ export default function App() {
   const project = projects.find(item => path === `/projects/${item.slug}`)
 
   useEffect(() => {
+    if (path === '/projects/caretrip-goai') window.location.replace('#/projects/caretrip-ops')
+  }, [path])
+
+  useEffect(() => {
     const onHashChange = () => setPath(window.location.hash.slice(1) || '/')
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
