@@ -4,7 +4,7 @@ const internshipSlugs = ['allied-medical-rag', 'uav-advisory-agent']
 const internships = internshipSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSlugs = ['caretrip-ops', 'meet-ta', 'discourse-research']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const otherSlugs = ['vibe-kangbo', 'massage-mayhem', 'menu-weixin']
+const otherSlugs = ['vibe-kangbo', 'massage-mayhem', 'menu-weixin', 'deposit-wars']
 const otherProjects = otherSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
@@ -38,6 +38,10 @@ const featuredSummaries: Record<string, Localized> = {
   'menu-weixin': {
     en: 'Built a WeChat ordering flow with 47 dishes, scaled recipes, delivery and dine-in modes, chef identity checks and recoverable cloud sync.',
     zh: '开发微信点餐流程：47 道菜、菜谱换算、外送与堂食、主厨身份校验及可恢复的云端同步。',
+  },
+  'deposit-wars': {
+    en: 'Built a local nine-level rental puzzle demo with tenant and landlord perspectives, object collection and evidence-based marking.',
+    zh: '制作九关租房找茬本地 Demo，包含租客与房东双视角、物件收集及线索标注。',
   },
 }
 

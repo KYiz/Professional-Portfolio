@@ -303,6 +303,37 @@ export const projects: Project[] = [
     ],
     reflection: { en: 'Order flows need clear identity checks and recovery when synchronization fails.', zh: '订单流程需要明确的身份校验，也要在同步失败时给用户可恢复的路径。' },
   },
+  {
+    slug: 'deposit-wars', index: '09',
+    category: { en: 'Game prototype', zh: '游戏原型' },
+    title: { en: 'Deposit Wars', zh: '押金保卫战' },
+    subtitle: { en: 'A dual-perspective rental puzzle across nine housing scenes.', zh: '九种住房场景、租客与房东双视角的租房找茬解谜。' },
+    period: { en: 'Oct 2026', zh: '2026.10' },
+    role: { en: 'Game concept and prototype', zh: '游戏策划与原型开发' },
+    tags: ['Phaser 3', 'TypeScript', 'Vite', '2D Puzzle'],
+    repo: 'https://github.com/KYiz/Deposit-Wars',
+    status: { en: 'Nine-level local demo', zh: '九关本地 Demo' },
+    overview: { en: 'A 2D spot-the-difference puzzle about rental deposit disputes. The current local demo offers nine housing scenes and both tenant and landlord perspectives: players collect relevant objects, use clues to mark problem areas and progress through each room. A separate earlier single-room prototype demonstrates investigation, evidence and a fictional deposit settlement.', zh: '以租房押金争议为题材的 2D 看图找茬解谜原型。当前本地 Demo 提供九种住房场景及租客、房东双视角：玩家拾取相关物件，使用线索标注问题区域，逐关推进。另有较早的单房间原型，验证检查、取证与虚构押金结算的完整流程。' },
+    challenge: { en: 'Turn real-world rental disputes into fair, visual puzzles while letting both sides inspect evidence rather than assigning blame from a room defect alone.', zh: '把租房争议改编为公平、可视化的谜题，让双方通过线索检查问题，而不是仅凭房间异常就判定责任。' },
+    responsibility: [
+      { en: 'Structured nine different housing types and 36 fictionalized case problems: two issues per role in each room.', zh: '规划九种住房类型与 36 个虚构改编案例问题，每个房间的两种身份各有两处问题。' },
+      { en: 'Built object pickup and evidence-to-location matching: relevant objects enter the inventory, mismatches can be retried and correct combinations mark the room.', zh: '实现物件拾取与线索、区域匹配：有效物件入栏，错配可重试，正确组合才在房间中留下标记。' },
+      { en: 'Added drag, click and keyboard paths for finding objects, with a fixed-size inventory that opens from two to six slots across the nine levels.', zh: '为找物件提供拖动、点击和键盘操作；物品栏外框固定，九关开放卡槽从两格逐步增加到六格。' },
+      { en: 'Kept the earlier single-room investigation and settlement prototype available as a separate proof of the full game loop.', zh: '保留较早的单房间检查、取证与结算原型，单独验证完整玩法循环。' },
+    ],
+    architecture: [
+      { en: 'Case and room design → generated nine-level data + scene/object art → local browser demo with inventory and marking logic.', zh: '案例与房型设计 → 生成九关数据及房间、物件美术 → 带物品栏和标注逻辑的本地浏览器 Demo。' },
+      { en: 'The source project uses Phaser 3, TypeScript and Vite; the nine-level demo can also be opened locally from the repository without installing Node.js.', zh: '源码工程使用 Phaser 3、TypeScript 与 Vite；九关 Demo 下载完整仓库后也可直接在本地浏览器打开。' },
+    ],
+    process: [
+      { en: 'Checked both perspectives across the nine rooms, 36 problem prompts, object collection, wrong matches and narrow-screen touch interactions.', zh: '检查九个房间的双视角、36 个问题、物件收集、错配行为及窄屏触控交互。' },
+    ],
+    outcomes: [
+      { en: 'Delivered a locally playable nine-level mechanics demo with nine room illustrations, two viewpoints and 36 adapted problem prompts.', zh: '完成可在本地游玩的九关机制 Demo，包含九张房间场景、两种视角及 36 个改编问题。' },
+      { en: 'Case-specific reveal art, Inspection Phone and deposit settlement are implemented only in the earlier single-room prototype, not yet integrated into all nine levels; the game has not launched.', zh: '逐案例揭露、Inspection Phone 和押金结算目前只在较早的单房间原型中实现，尚未接入九关，也尚未正式上线。' },
+    ],
+    reflection: { en: 'A puzzle built from real disputes needs to make evidence discoverable and keep the difference between a visual clue and proven responsibility clear.', zh: '从真实争议改编谜题时，需要让线索可发现，也要区分视觉异常与已经证实的责任。' },
+  },
 ]
 
 const projectExperience = [
@@ -366,6 +397,7 @@ export const projectVisuals: Record<string, string> = {
   'vibe-kangbo': './visuals/product.webp',
   'massage-mayhem': './visuals/role.webp',
   'menu-weixin': './visuals/development.webp',
+  'deposit-wars': './visuals/product.webp',
 }
 
 export const portfolioDocument = {
