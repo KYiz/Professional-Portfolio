@@ -28,16 +28,16 @@ const featuredSummaries: Record<string, Localized> = {
     zh: '处理 TED-MDB 数据，并通过 40 次 MiniLM 实验比较结构提示；仓库记录了五随机种子的结果。',
   },
   'vibe-kangbo': {
-    en: 'Produced a 2-minute-14-second vertical episode about the Kondratiev wave, with an editable HyperFrames project.',
-    zh: '制作关于康波周期的 2 分 14 秒竖屏视频，并保留可编辑的 HyperFrames 工程。',
+    en: 'Produced a 134-second vertical explainer with 17 code-built scenes, GSAP motion, Python audio mixing and editable HyperFrames source.',
+    zh: '制作 134 秒竖屏知识短片：17 个代码场景、GSAP 动画、Python 混音及可编辑的 HyperFrames 工程。',
   },
   'massage-mayhem': {
-    en: 'Built a playable browser prototype with gesture actions, game rules, local saves, and 30 levels.',
-    zh: '制作可玩的浏览器原型，包含手势操作、规则系统、本地存档和 30 关进程。',
+    en: 'Built a playable 30-level rules prototype with gesture scoring and saves, plus a separate character animation architecture sample.',
+    zh: '制作含手势评分与存档的可玩 30 关规则原型，并验证角色动画架构样机。',
   },
   'menu-weixin': {
-    en: 'Developed a WeChat menu and ordering mini program with local storage and cloud-function order sync.',
-    zh: '开发微信点餐小程序，包含本机订单保存和云函数同步。',
+    en: 'Built a WeChat ordering flow with 47 dishes, scaled recipes, delivery and dine-in modes, chef identity checks and recoverable cloud sync.',
+    zh: '开发微信点餐流程：47 道菜、菜谱换算、外送与堂食、主厨身份校验及可恢复的云端同步。',
   },
 }
 
