@@ -8,20 +8,20 @@ const otherSlugs = ['vibe-kangbo', 'massage-mayhem', 'menu-weixin']
 const otherProjects = otherSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
-    en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
-    zh: '用 Spring Boot 串联 Front 邮件、Azure OpenAI、混合检索、OneDrive 知识刷新与员工审核界面。',
+    en: 'Built the multimodal path from Front email text, images and PDFs to GPT-4o analysis, hybrid retrieval and evidence-backed parts suggestions for staff.',
+    zh: '打通 Front 邮件文本、图片和 PDF 到 GPT-4o 分析、混合检索及带证据零件建议的多模态链路。',
   },
   'caretrip-ops': {
-    en: 'Built a LangGraph travel workflow with evidence checks and traveler approval; the public repository now extends the Hackathon PoC to V5.',
-    zh: '开发含证据核验和本人审批的 LangGraph 旅行工作流；公开仓库现已从 Hackathon PoC 扩展至 V5。',
+    en: 'Built a LangGraph travel workflow with evidence checks, traveler approval and recoverable booking states; the repository now extends the Hackathon PoC to V5.',
+    zh: '开发含证据核验、本人审批与可恢复预订状态的 LangGraph 旅行工作流；仓库现已从 Hackathon PoC 扩展至 V5。',
   },
   'meet-ta': {
-    en: 'Developed the visual emotion model and connected it to a team-built multimodal conversation prototype; test accuracy reached 85.34%.',
-    zh: '负责视觉情绪模型开发，并接入团队的多模态对话原型；模型测试准确率为 85.34%。',
+    en: 'Trained the ConvNeXtV2-Huge emotion model, built YOLO face inference and FastAPI interfaces, and fused vision with speech and memory; test accuracy reached 85.34%.',
+    zh: '训练 ConvNeXtV2-Huge 情绪模型，开发 YOLO 人脸推理与 FastAPI 接口，再融合语音和记忆；测试准确率为 85.34%。',
   },
   'uav-advisory-agent': {
-    en: 'Built a five-stage RAG advisory Agent for UAV export controls; regulatory judgment accuracy reached 88.24%.',
-    zh: '开发无人机出口管制五阶段 RAG 咨询 Agent；法规判断准确率为 88.24%。',
+    en: 'Used Python, LangGraph and IBM watsonx to build a five-stage, evidence-linked UAV export advisory Agent; regulatory judgment accuracy reached 88.24%.',
+    zh: '结合 Python、LangGraph 与 IBM watsonx 开发五阶段、可追溯依据的无人机出口咨询 Agent；法规判断准确率为 88.24%。',
   },
   'discourse-research': {
     en: 'Processed TED-MDB data and compared structural cues across 40 MiniLM runs; the repository records the five-seed results.',
