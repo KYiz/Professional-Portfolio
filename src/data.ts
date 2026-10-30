@@ -8,7 +8,7 @@ export const profile = {
   email: 'yixiangzou2012@gmail.com',
   linkedin: 'https://www.linkedin.com/in/kelvin-zou-211yxz/',
   github: 'https://github.com/KYiz',
-  resume: './docs/Yixiang_Zou_Resume.pdf',
+  resume: 'https://kyiz.github.io/Professional-Portfolio/docs/Yixiang_Zou_Resume.pdf',
   portfolio: './docs/Yixiang_Zou_AI_Agent_Product_Portfolio.pdf',
   location: { en: 'Auckland, New Zealand', zh: '新西兰 · 奥克兰' },
   headline: {

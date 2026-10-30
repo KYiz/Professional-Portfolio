@@ -29,8 +29,10 @@ function checkLocalization(value) {
 Object.values(data).forEach(checkLocalization)
 
 function asset(url) {
-  assert.ok(url.startsWith('./'), `Asset must be relative for GitHub Pages: ${url}`)
-  const target = path.resolve(root, 'public', url.slice(2))
+  const canonicalSite = 'https://kyiz.github.io/Professional-Portfolio/'
+  const relativeUrl = url.startsWith(canonicalSite) ? `./${url.slice(canonicalSite.length)}` : url
+  assert.ok(relativeUrl.startsWith('./'), `Asset must be relative or use the canonical GitHub Pages URL: ${url}`)
+  const target = path.resolve(root, 'public', relativeUrl.slice(2))
   assert.ok(target.startsWith(path.join(root, 'public') + path.sep))
   assert.ok(existsSync(target), `Missing public file: ${url}`)
   return target

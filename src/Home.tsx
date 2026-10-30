@@ -90,7 +90,7 @@ export default function Home({ lang }: { lang: Language }) {
           ? '下面的项目涉及旅行 Agent、多模态对话和 NLP 研究。点开项目说明可查看问题、个人贡献、方法和结果。'
           : 'Projects in travel agents, multimodal conversation, and NLP research. Each case study explains the problem, my contribution, approach, and result.'}</p>
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
-        <div className="other-work">
+        <div className="other-work" id="other-projects">
           <h3>{lang === 'zh' ? '其他项目' : 'Other projects'}</h3>
           <div className="project-list">{otherProjects.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
         </div>

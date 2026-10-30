@@ -50,7 +50,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #2457a4; outline-offs
 .project-entry h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; line-height: 1.4; }
 .project-entry p { max-width: 720px; margin: 0 0 10px; font-size: 14px; }
 .entry-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; }
-.other-work { padding-top: 23px; }
+.other-work { padding-top: 23px; scroll-margin-top: 90px; }
 .other-work h3 { margin: 0 0 12px; font-size: 15px; }
 .other-work ul, .education-list { list-style: none; padding: 0; margin: 0; }
 .other-work li { display: flex; flex-wrap: wrap; gap: 7px 18px; align-items: baseline; padding: 6px 0; font-size: 14px; }
