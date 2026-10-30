@@ -1,8 +1,8 @@
-# Yixiang Zou — Portfolio
+# Yixiang Zou — Professional Portfolio
 
 A bilingual, static personal site built with React, TypeScript, and Vite. The homepage is a short introduction and a list of selected projects. Detailed case studies hold the work that needs more room than a CV.
 
-**Live site:** [kyiz.github.io/Personal-webpage](https://kyiz.github.io/Personal-webpage/)
+**Live site:** [kyiz.github.io/Professional-Portfolio](https://kyiz.github.io/Professional-Portfolio/)
 
 ## Run locally
 
