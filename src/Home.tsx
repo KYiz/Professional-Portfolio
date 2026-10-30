@@ -2,9 +2,8 @@ import { education, profile, projects, t, type Language, type Localized, type Pr
 
 const internshipSlugs = ['allied-medical-rag', 'uav-advisory-agent']
 const internships = internshipSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const featuredSlugs = ['caretrip-ops', 'meet-ta']
+const featuredSlugs = ['caretrip-ops', 'meet-ta', 'discourse-research']
 const featured = featuredSlugs.map(slug => projects.find(project => project.slug === slug)!).filter(Boolean)
-const other = projects.filter(project => !internshipSlugs.includes(project.slug) && !featuredSlugs.includes(project.slug))
 const featuredSummaries: Record<string, Localized> = {
   'allied-medical-rag': {
     en: 'Connected Front intake, Azure OpenAI, hybrid retrieval, OneDrive knowledge refresh, and a staff review UI in a Spring Boot service.',
@@ -21,6 +20,10 @@ const featuredSummaries: Record<string, Localized> = {
   'uav-advisory-agent': {
     en: 'Built a five-stage RAG advisory Agent for UAV export controls; regulatory judgment accuracy reached 88.24%.',
     zh: '开发无人机出口管制五阶段 RAG 咨询 Agent；法规判断准确率为 88.24%。',
+  },
+  'discourse-research': {
+    en: 'Processed TED-MDB data and compared structural cues across 40 MiniLM runs; the repository records the five-seed results.',
+    zh: '处理 TED-MDB 数据，并通过 40 次 MiniLM 实验比较结构提示；仓库记录了五随机种子的结果。',
   },
 }
 
@@ -69,10 +72,6 @@ export default function Home({ lang }: { lang: Language }) {
           ? '下面的项目涉及旅行 Agent、多模态对话和 NLP 研究。点开项目说明可查看问题、个人贡献、方法和结果。'
           : 'Projects in travel agents, multimodal conversation, and NLP research. Each case study explains the problem, my contribution, approach, and result.'}</p>
         <div className="project-list">{featured.map(project => <ProjectEntry key={project.slug} project={project} lang={lang} />)}</div>
-        <div className="other-work">
-          <h3>{lang === 'zh' ? '其他项目' : 'Other work'}</h3>
-          <ul>{other.map(project => <li key={project.slug}><a href={`#/projects/${project.slug}`}>{t(project.title, lang)}</a><span>{t(project.status, lang)}{project.repo && <> · <a href={project.repo} target="_blank" rel="noreferrer">GitHub ↗</a></>}</span></li>)}</ul>
-        </div>
       </section>
 
       <section className="content-section compact-section" id="background" aria-labelledby="background-title">
